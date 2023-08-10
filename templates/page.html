@@ -13,18 +13,12 @@
     </style>
     <body>
         <h1>{{ title }}</h1>
-        <!-- <h3>Numbers are for all of the United States and territories (Guam, Northern Mariana Islands, Puerto Rico, and Virgin Islands)</h3>
-        <h3>Numbers represent the daily count for the date specified</h3><br> -->
-        <!--<p><a href="/predict">Predict</a></p>-->
-        <!--<p><a href="/about">About</a></p>-->
-        <!--<p><a href="/">Home</a></p>-->
         <div class="container">
             <table>
                 <tr>
                     <td width=50%>
         <script>
         document.write("<h2>CASES:</h2>")
-        // document.write("<h2>&nbsp;&nbsp;&nbsp;Current: {{ jsonfile.MostRecentCasesCount }} cases on {{ jsonfile.CasesDate }}</h2>");
         document.write("<h2>&nbsp;&nbsp;&nbsp;Predicted: {{ jsonfile.PredictedCases }} cases on {{ jsonfile.CasesPredictionDate }}</h2>");
         </script>
                     </td>
@@ -36,6 +30,7 @@
         </div>
     
         <h3>Data is from the Covid19NYT data set hosted by Google Big Query</h3>
+        <h3>The original dataset includes data up to '2023-03-23'. </h3>
         <h3>Predictions were made with a Google Cloud ARIMA model with a confidence rate of 0.8</h3>
         <h4>Mingming Gu - MSDS 434
     </body>

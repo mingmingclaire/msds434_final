@@ -4,15 +4,19 @@ import google.auth
 from google.cloud import bigquery
 
 app = Flask(__name__)
+
+# @app.route('/get_data')
+# def form():
+#     return render_template('input.html')
+
 @app.route('/')
 def predict():
- 
 
 
     credentials, project_id = google.auth.default(
         scopes=["https://www.googleapis.com/auth/cloud-platform"]
     )
-    project_id = 'week5-393522'
+    project_id = 'week7-395422'
     bqclient = bigquery.Client(credentials= credentials,project=project_id)
 
     #get predicted cases
@@ -122,7 +126,7 @@ def predict():
         }
 
 
-    return render_template("page.html", title="COVID19: Current Stats and Predictions",jsonfile = val )
+    return render_template("page.html", title="COVID23: Current Stats and Predictions",jsonfile = val )
 
   
 if __name__ == '__main__':
