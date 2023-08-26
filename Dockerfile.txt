@@ -1,12 +1,12 @@
-# Use an official lightweight Python image.
 FROM python:3.9-slim
 
 # Copy local code to the container image.
-WORKDIR /app
+WORKDIR /
 COPY main.py .
 COPY requirements.txt .
 
 # Install dependencies into this container so there's no need to 
+steps:
 # install anything at container run time.
 RUN pip install -r requirements.txt
 

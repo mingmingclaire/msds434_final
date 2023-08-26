@@ -5,19 +5,21 @@ from google.cloud import bigquery
 
 app = Flask(__name__)
 
+credentials, project_id = google.auth.default(
+    scopes=["https://www.googleapis.com/auth/cloud-platform"]
+)
+project_id = 'week7-395422'
+bqclient = bigquery.Client(credentials= credentials,project=project_id)
+
 # @app.route('/get_data')
 # def form():
 #     return render_template('input.html')
 
-@app.route('/')
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
 
-    credentials, project_id = google.auth.default(
-        scopes=["https://www.googleapis.com/auth/cloud-platform"]
-    )
-    project_id = 'week7-395422'
-    bqclient = bigquery.Client(credentials= credentials,project=project_id)
+
 
     #get predicted cases
     query_string= """

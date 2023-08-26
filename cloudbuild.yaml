@@ -15,14 +15,16 @@ steps:
     entrypoint: 'gcloud'
     timeout: 240s
     args: ['run', 'deploy', 
-           '${_SERVICENAME}',
            '--image', 
            '--region', 
+           '--build-arg',
            'gcr.io/$PROJECT_ID/myimage',
-           'us-central1']
+           'us-west1']
     env:
-      - 'CLOUDSDK_COMPUTE_REGION=us-central1'
-      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+      - 'CLOUDSDK_COMPUTE_REGION=us-west1'
+      - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+      - 'ENVIRONMENT=development'
+      - 'ENVIRONMENT=production'
 
   images:
     - 'gcr.io/$PROJECT_ID/myimage'
