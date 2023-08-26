@@ -1,14 +1,14 @@
-# Covid19
-Project contains a flask app that queries google big query storage (holds two arima models and etl of NYT Covid19 dataset) and returns latest cases/deaths stats for US and territories, along with prediction for cases/deaths 30 days out.
-Vyzytor-patch-1 is the development environment, subject to linting from both CircleCI and GitActions. Master is the production environment that is linked to Google Cloud Platform.
+# Movie Review Text Sentiment Classification App
 
-main.py – the primary application file that retrieves data from Google Big Query and uses flask to deliver the data and render the web page
+Project contains a flask app that queries google big query storage (holds a classification model based on Kaggle Movie Review) and returns Positive or Negative category whichever has a high probability output from the model. Master is the production environment that is linked to Google Cloud Platform.
+
+main.py – the primary application file that retrieves data from Google Big Query to train the model and uses flask to deliver the data and render the web page
 
 templates/page.html – the web page
 
-static/styles/covid19.css – style sheet for the web page
+static/styles/moviereview.css – style sheet for the web page
 
-static/styles/CovidTransparent.jpg – image used on the web page. Note: image is free and sourced from unsplash.com
+static/styles/Movies.jpg – image used on the web page.
 
 app.yaml – configuration file for application
 
