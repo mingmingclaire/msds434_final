@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>COVID19</title>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/covid19.css') }}">
+        <title>Movie Review Text Sentiment Classification App</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/moviereview.css') }}">
     </head>
     <style>
     body, h1, h2, h3, h4, h5, h6  {
@@ -18,20 +18,20 @@
                 <tr>
                     <td width=50%>
         <script>
-        document.write("<h2>CASES:</h2>")
-        document.write("<h2>&nbsp;&nbsp;&nbsp;Predicted: {{ jsonfile.PredictedCases }} cases on {{ jsonfile.CasesPredictionDate }}</h2>");
+        document.write("<h2>Result:</h2>")
+        document.write("<h2>&nbsp;&nbsp;&nbsp;Predicted: {{ jsonfile.PredictedSentimentCategory }} </h2>");
         </script>
                     </td>
                     <td>
-                        <img src='/static/styles/CovidTransparent.jpg'>
+                        <img src='/static/styles/moviereview.png'>
                     </td>
                 </tr>
             </table>
         </div>
     
-        <h3>Data is from the Covid19NYT data set hosted by Google Big Query</h3>
-        <h3>The original dataset includes data up to '2023-03-23'. </h3>
-        <h3>Predictions were made with a Google Cloud ARIMA model with a confidence rate of 0.8</h3>
+        <h3>Data is from Kaggle IMDB Dataset of 50K Movie Reviews </h3>
+        <h3>The original dataset link is https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews/data </h3>
+        <h3>Prediction was made with a logistic regression model with Google Cloud BigQueary ML </h3>
         <h4>Mingming Gu - MSDS 434
     </body>
 </html>

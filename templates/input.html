@@ -1,3 +1,13 @@
-<form action="'/data" method="POST">
-    <p>Time Horizon to Predict: <input type="number" name="Days Horizon" /></p>
-</form>
+<html>
+    <head>
+        <title>Prediction Input - Your Selection of Movie Review Paragraph</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/moviereview.css') }}">
+    </head>
+
+    <body class="is-preload">
+        <form action="'/data" method="POST">
+            <p>Text Here: <input type="text" name="review_text" /></p>
+        </form>
+    </body>
+</html>
+
