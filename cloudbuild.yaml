@@ -2,29 +2,30 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           'gcr.io/$PROJECT_ID/myimage', 
+           'gcr.io/$PROJECT_ID/${_SERVICENAME}:$COMMIT_SHA', 
            '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
-           'gcr.io/$PROJECT_ID/myimage']
+           'gcr.io/$PROJECT_ID/${_SERVICENAME}:$COMMIT_SHA']
 
   # Entrypoint, timeout and environment variables
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     timeout: 240s
     args: ['run', 'deploy', 
+          '${_SERVICENAME}',
            '--image', 
            '--region', 
            '--build-arg',
-           'gcr.io/$PROJECT_ID/myimage',
+           'gcr.io/$PROJECT_ID/${_SERVICENAME}:$COMMIT_SHA',
            'us-west1']
-    env:
-      - 'CLOUDSDK_COMPUTE_REGION=us-west1'
-      - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
-      - 'ENVIRONMENT=development'
-      - 'ENVIRONMENT=production'
+    # env:
+    #   - 'CLOUDSDK_COMPUTE_REGION=us-west1'
+    #   - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+    #   - 'ENVIRONMENT=development'
+    #   - 'ENVIRONMENT=production'
 
   images:
-    - 'gcr.io/$PROJECT_ID/myimage'
+    - 'gcr.io/$PROJECT_ID/${_SERVICENAME}:$COMMIT_SHA'
