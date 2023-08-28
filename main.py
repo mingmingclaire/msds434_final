@@ -13,7 +13,7 @@ credentials, project_id = google.auth.default(
 project_id = 'finalproject-396805'
 bqclient = bigquery.Client(credentials= credentials,project=project_id)
 
-@app.route('/get_data')
+@app.route('/')
 def input():
     return render_template('input.html')
 

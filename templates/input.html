@@ -1,12 +1,15 @@
 <html>
     <head>
-        <title>Prediction Input - Your Selection of Movie Review Paragraph</title>
+        <title>Prediction Input</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/moviereview.css') }}">
     </head>
 
     <body class="is-preload">
-        <form action="'/data" method="POST">
-            <p>Text Here: <input type="text" name="review_text" /></p>
+        <h1>Movie Review Text Sentiment Classification App</h1>
+        <h2>MSDS434 - (Claire) Mingming Gu</h2>
+        <p class="input-instructions">Your Selection of Movie Review Paragraph</p>
+        <form action="'/predict" method="POST" id="form">
+            <p class="form-fields">Enter Your Text Here: <input type="text" name="review_text" /></p>
         </form>
     </body>
 </html>
