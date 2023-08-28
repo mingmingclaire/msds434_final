@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11.4-slim
 
 # Copy local code to the container image.
 WORKDIR /
